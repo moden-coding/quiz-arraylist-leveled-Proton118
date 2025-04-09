@@ -27,5 +27,31 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner reader = new Scanner(System.in);
+
+        ArrayList<Integer> studentIDs = new ArrayList<>();
+        while(true){
+            System.out.println("Enter an ID: ");
+            int ID = Integer.valueOf(reader.nextLine());
+
+            if(ID == -1){
+                break;
+            }
+
+            if(studentIDs.contains(ID)){
+                System.out.println("ID is a Duplicate");
+                System.out.println("Would you like to delete this ID?");
+                if(reader.nextLine().toLowerCase().equals("yes")){
+                    System.out.println("Deleting ID...");
+                    studentIDs.remove((Integer)ID);
+                }
+                continue;
+            }
+            studentIDs.add(ID);
+        }
+
+        System.out.println("You entered ID's: ");
+        for (int ID : studentIDs) {
+            System.err.println(ID);
+        }
     }
 }
