@@ -51,7 +51,7 @@ public class App {
 
         System.out.println("You entered ID's: ");
         for (int ID : studentIDs) {
-            System.err.println(ID);
+            System.out.println(ID);
         }
     }
 }
